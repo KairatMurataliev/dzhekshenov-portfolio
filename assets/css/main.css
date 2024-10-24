@@ -1,7 +1,5 @@
-/*=============== GOOGLE FONTS ===============*/
 @import url("https://fonts.googleapis.com/css2?family=Poppins:wght@400;500;600&display=swap");
 
-/*=============== VARIABLES CSS ===============*/
 :root {
   /*========== Colors ==========*/
   /*Color mode HSL(hue, saturation, lightness)*/
@@ -24,8 +22,6 @@
   --body-color: hsl(var(--hue), 100%, 99%);
   --container-color: #fff;
 
-  /*========== Font and typography ==========*/
-  /*.5rem = 8px | 1rem = 16px ...*/
   --body-font: 'Poppins', sans-serif;
   --h2-font-size: 1.25rem;
   --h3-font-size: 1rem;
@@ -44,7 +40,6 @@
   }
 }
 
-/*=============== BASE ===============*/
 * {
   box-sizing: border-box;
   padding: 0;
@@ -56,7 +51,7 @@ body {
   font-size: var(--normal-font-size);
   background-color: var(--body-color);
   color: var(--text-color);
-  transition: .3s; /* For animation dark mode */
+  transition: .5s;
 }
 
 h1, h2, h3 {
@@ -77,19 +72,51 @@ img {
   height: auto;
 }
 
-/*=============== THEME ===============*/
+.change-theme {
+  position: absolute;
+  top: 1.5rem;
+  right: 0;
+  font-size: 1.25rem;
+  color: var(--title-color);
+  cursor: pointer;
+  transition: .3s;
+}
+
+.change-theme:hover {
+  color: var(--first-color);
+}
 
 
-/*========== Variables Dark theme ==========*/
+body.dark-theme {
+  --title-color: hsl(var(--hue), 12%, 95%);
+  --text-color: hsl(var(--hue), 12%, 75%);
+  --body-color: hsl(var(--hue), 40%, 8%);
+  --container-color: hsl(var(--hue), 24%, 12%);;
+}
 
 
-/*========== 
-    Color changes in some parts of 
-    the website, in light theme
-==========*/
+.dark-theme .button__gray {
+  background: var(--container-color);
+}
 
+.dark-theme .button__gray:hover {
+  background: hsl(var(--hue), 24%, 16%);
+}
 
-/*=============== REUSABLE CSS CLASSES ===============*/
+.dark-theme .filters__content {
+  background: var(--container-color);
+}
+
+.dark-theme::-webkit-scrollbar {
+  background-color: hsl(var(--hue), 8%, 16%);
+}
+.dark-theme::-webkit-scrollbar-thumb {
+  background-color: hsl(var(--hue), 8%, 24%);
+}
+.dark-theme::-webkit-scrollbar-thumb:hover {
+  background-color: hsl(var(--hue), 8%, 32%);
+}
+
 .container {
   max-width: 968px;
   margin-left: 1.5rem;
@@ -101,38 +128,23 @@ img {
   gap: 1.5rem;
 }
 
-/*=============== PROFILE ===============*/
+.footer__copy {
+  display: block;
+  margin: 2.5rem 0 2rem;
+  text-align: center;
+  font-size: var(--smaller-font-size);
+  color: var(--text-color-light);
+}
 
-
-/*=============== BUTTONS ===============*/
-
-
-/*=============== FILTERS TABS ===============*/
-
-
-/*=============== PROJECTS ===============*/
-
-
-/*=============== SKILLS ===============*/
-
-
-/* Hide and show projects & skills */
-
-
-/* Activate button filter */
-
-
-/*=============== FOOTER ===============*/
-
-
-/*=============== SCROLL BAR ===============*/
-
-
-/*=============== BREAKPOINTS ===============*/
-/* For small devices */
-
-
-/* For medium devices */
-
-
-/* For large devices */
+::-webkit-scrollbar {
+  width: .6rem;
+  border-radius: .5rem;
+  background-color: hsl(var(--hue), 8%, 66%);
+}
+::-webkit-scrollbar-thumb {
+  border-radius: .5rem;
+  background-color: hsl(var(--hue), 8%, 54%);
+}
+::-webkit-scrollbar-thumb:hover {
+  background-color: hsl(var(--hue), 8%, 44%);
+}
